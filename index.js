@@ -67,10 +67,15 @@ app.post("/send-email", async (req, res) => {
 
     res.status(200).json({ success: true, message: "Emails sent successfully!" });
   } catch (error) {
-    console.error("Error sending email:", error);
+    
     res.status(500).json({ success: false, message: "Error sending email", error });
   }
 });
+
+
+app.get('/', (req, res) => {
+  res.send('Hello from Portfolio Server..')
+})
 
 // Start the server
 const PORT = process.env.PORT || 5000;
